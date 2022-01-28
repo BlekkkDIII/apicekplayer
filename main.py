@@ -10,9 +10,12 @@ def server(ip):
         with mcquery(host=ip, port=19132, timeout=30) as data:
             player = jsonify(Players=data.players)
             return player
-      except:
+    except:
         return "<br><br><br><br><br><br><br><center><h2>Timed Out</h2></center>", 400
 
+@app.route('/')
+def index():
+    return "<br><br><br><br><br><br><br><center>GAK ADA APA APA DISINI!</center>"
 
 
 app.run(host='0.0.0.0', port=8080, debug=True)
